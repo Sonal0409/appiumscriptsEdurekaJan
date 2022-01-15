@@ -1,24 +1,26 @@
-package module4.Scripts;
+package instructorscripts;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Set;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.MultiTouchAction;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.touch.TapOptions;
+import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.ElementOption;
 import io.appium.java_client.touch.offset.PointOption;
+import java.time.Duration;
 
-public class TapGesture {
+public class MultiToucAction {
 
 	public static void main(String[] args) throws MalformedURLException, InterruptedException {
 		// TODO Auto-generated method stub
-		
+
 		
 
 		DesiredCapabilities	cap = new DesiredCapabilities();
@@ -31,46 +33,37 @@ public class TapGesture {
 		
 		AndroidDriver<MobileElement> driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"),cap);
 		
-
-		
-		// to tap on a coordinate --> tap
-		
-		TouchAction ta = new TouchAction(driver);
 		
 		Thread.sleep(3000);
 		
-		ta.tap(PointOption.point(515, 1000)).perform().tap(PointOption.point(515, 1000)).perform();
+		TouchAction t= new TouchAction(driver);
 		
-
+		t.tap(PointOption.point(309,879)).perform();
 		
-		Thread.sleep(3000);
-	
+		// Zoom out
 		
+		// Action perfomed by my finger 1
+		TouchAction ta3= new TouchAction(driver).longPress(PointOption.point(540, 790))
+		.waitAction(WaitOptions.waitOptions(Duration.ofSeconds(3)))
+		.moveTo(PointOption.point(845, 350));
 		
+		// Action performed by finger 2
 		
-		// to tap on an element -- using element Locator
-		
-	MobileElement e1=	driver.findElementByXPath("//android.widget.TextView[@text='Search here']");
-		
-		ta.tap(TapOptions.tapOptions().withElement(ElementOption.element(e1))).perform();
-		
-		
-		
-		
-		
-		
+		TouchAction ta4= new TouchAction(driver).longPress(PointOption.point(410, 1579))
+		.waitAction(WaitOptions.waitOptions(Duration.ofSeconds(3)))
+		.moveTo(PointOption.point(180,1466));
+			
+		MultiTouchAction ma = new MultiTouchAction(driver);
 		
 		
+		//ma.add(ta1).add(ta2).perform();
 		
+		Thread.sleep(2000);	
+			
+			
+		ma.add(ta3).add(ta4).perform();
 		
-		
-		
-		
-		
-		
-		
-		
-
+			
 	}
 
 }

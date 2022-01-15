@@ -2,6 +2,7 @@ package module4.Scripts;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Set;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -30,6 +31,8 @@ public class TapApidemos {
 		AndroidDriver<MobileElement> driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"),cap);
 		
 		Thread.sleep(2000);
+		
+
 		
 		TouchAction ta = new TouchAction(driver);
 		
