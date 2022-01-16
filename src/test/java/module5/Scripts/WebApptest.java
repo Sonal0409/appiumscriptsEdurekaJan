@@ -2,8 +2,11 @@ package module5.Scripts;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -26,9 +29,9 @@ DesiredCapabilities	cap = new DesiredCapabilities();
 	    cap.setCapability("chromedriverExecutable","C:\\Grid\\chromedriver.exe");
 		AndroidDriver<MobileElement> driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"),cap);
 		
+		// Implicit wait
 		
-		// Hybrid ==> Native + webapp
-		
+		//driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
 		
 		driver.get("https://www.google.com/");
 		// use devtools on your laptopb browser be giving chrome://inspect
@@ -40,13 +43,16 @@ DesiredCapabilities	cap = new DesiredCapabilities();
 		
 		driver.pressKey(new KeyEvent(AndroidKey.ENTER));
 		
-		Thread.sleep(4000);
+// Explicit wait - for a particular element
+	
 		
+	MobileElement e1 =	driver.findElementByXPath("//*[@id=\"rso\"]/div[1]/div/div[1]/div/div[1]/a/div[2]/div");
 		
-		driver.findElementByXPath("//*[@id=\"rso\"]/div[1]/div/div[1]/div/div[1]/a/div[2]/div").click();
-		
-		
-		
+	WebDriverWait wait=new WebDriverWait(driver, 10);
+	
+	wait.until(ExpectedConditions.visibilityOf(e1));
+	
+	e1.click();
 		
 		
 		

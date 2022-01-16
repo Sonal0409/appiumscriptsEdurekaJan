@@ -57,6 +57,13 @@ DesiredCapabilities	cap = new DesiredCapabilities();
 	driver.pressKey(new KeyEvent(AndroidKey.L));
 	driver.pressKey(new KeyEvent(AndroidKey.H));
 	driver.pressKey(new KeyEvent(AndroidKey.I));
+	
+	Thread.sleep(2000);
+	
+	String text = driver.findElementById("com.google.android.apps.maps:id/search_omnibox_edit_text").getText();
+	
+	System.out.println(text);
+	
 	driver.pressKey(new KeyEvent(AndroidKey.ENTER));
 	
 		

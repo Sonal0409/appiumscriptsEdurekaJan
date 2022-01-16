@@ -2,6 +2,7 @@ package module5.Scripts;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -69,7 +70,14 @@ public class HydridAppDemo {
 	driver.findElementByXPath("//android.widget.TextView[@content-desc=\"History\"]").click();
 		
 		
+	
+	List<String> li=	driver.getSupportedPerformanceDataTypes();
+	
+	
+		System.out.println(li);
 		
+		
+		driver.getPerformanceData("com.android.chrome","cpuinfo",5);
 		
 		
 		

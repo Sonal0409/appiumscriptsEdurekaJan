@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+  
+<suite name="appiumtesting" verbose="1" >
+
+  <test name="WebApp" >
+    <classes>
+       <class name="module3.testNgScripts.WebAppTestScript2" />
+    </classes>
+  </test>
+   <test name="HybridApp" >
+    <classes>
+       <class name="module3.testNgScripts.HybridAppTest" />
+    </classes>
+  </test>
+</suite>

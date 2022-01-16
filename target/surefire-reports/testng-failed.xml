@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [appiumtesting (0)]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="2" parallel="tests" name="RealDeviceApp(failed)" verbose="0">
+    <parameter name="pName" value="ANDROID"/>
+    <parameter name="dName" value="96352732140005T"/>
+    <parameter name="pVersion" value="11"/>
+    <parameter name="aPackage" value="com.google.android.apps.maps"/>
+    <parameter name="aAcitvity" value="com.google.android.maps.MapsActivity"/>
+    <parameter name="url" value="http://127.0.0.1:4723/wd/hub"/>
+    <classes>
+      <class name="module3.testNgScripts.NativeAppTest">
+        <methods>
+          <include name="tabElementTest"/>
+          <include name="closeapp"/>
+          <include name="OpenApp"/>
+        </methods>
+      </class> <!-- module3.testNgScripts.NativeAppTest -->
+    </classes>
+  </test> <!-- RealDeviceApp(failed) -->
+</suite> <!-- Failed suite [appiumtesting (0)] -->

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [appiumtesting]" guice-stage="DEVELOPMENT">
+  <test thread-count="2" parallel="tests" name="EmulatorDeviceApp(failed)">
+    <parameter name="pName" value="ANDROID"/>
+    <parameter name="dName" value="Nexus5"/>
+    <parameter name="pVersion" value="8.1"/>
+    <parameter name="aPackage" value="com.android.contacts"/>
+    <parameter name="aAcitvity" value="com.android.contacts.activities.PeopleActivity"/>
+    <parameter name="url" value="http://127.0.0.1:4724/wd/hub"/>
+    <classes>
+      <class name="module3.testNgScripts.ContactsDemo">
+        <methods>
+          <include name="contactAppTest" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- module3.testNgScripts.ContactsDemo -->
+    </classes>
+  </test> <!-- EmulatorDeviceApp(failed) -->
+</suite> <!-- Failed suite [appiumtesting] -->

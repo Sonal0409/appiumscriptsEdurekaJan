@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+  
+<suite name="appiumtesting" verbose="1" >
+<test name="nativeApp" >
+<parameter name="dName" value="96352732140005T"/>
+<parameter name="pName" value="ANDROID"/>
+<parameter name="pVersion" value="11"/>
+<parameter name="aPackage" value="com.google.android.apps.maps"/>
+<parameter name="aAcitvity" value="com.google.android.maps.MapsActivity"/>
+<parameter name="url" value="http://127.0.0.1:4723/wd/hub"/>
+    <classes>
+       <class name="module3.testNgScripts.NativeAppTest" />
+    </classes>
+  </test>
+  </suite>

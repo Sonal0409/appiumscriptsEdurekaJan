@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+  
+<suite name="appiumtesting" parallel="tests" thread-count="2" verbose="2" >
+
+<test name="RealDeviceApp" >
+<parameter name="dName" value="96352732140005T"/>
+<parameter name="pName" value="ANDROID"/>
+<parameter name="pVersion" value="11"/>
+<parameter name="aPackage" value="com.google.android.apps.maps"/>
+<parameter name="aAcitvity" value="com.google.android.maps.MapsActivity"/>
+<parameter name="url" value="http://127.0.0.1:4723/wd/hub"/>
+    <classes>
+       <class name="module3.testNgScripts.NativeAppTest" />
+    </classes>
+  </test>
+  <test name="EmulatorDeviceApp" >
+<parameter name="dName" value="Nexus5"/>
+<parameter name="pName" value="ANDROID"/>
+<parameter name="pVersion" value="8.1"/>
+<parameter name="aPackage" value="com.android.contacts"/>
+<parameter name="aAcitvity" value="com.android.contacts.activities.PeopleActivity"/>
+<parameter name="url" value="http://127.0.0.1:4724/wd/hub"/>
+    <classes>
+       <class name="module3.testNgScripts.ContactsDemo" />
+    </classes>
+  </test>
+  </suite>
