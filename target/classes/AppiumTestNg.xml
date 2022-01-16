@@ -7,9 +7,9 @@
        <class name="module3.testNgScripts.WebAppTestScript2" />
     </classes>
   </test>
-   <test name="HybridApp" >
+<!--   <test name="HybridApp" >
     <classes>
        <class name="module3.testNgScripts.HybridAppTest" />
     </classes>
-  </test>
+  </test> -->
 </suite>
